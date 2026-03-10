@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: #0099ff;
+  --color-primary-hover: #0077cc;
+  --color-primary-light: #e5f5ff;
+  --color-accent: #000000;
+  --color-surface: #ffffff;
+  --color-surface-dark: #000000;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply bg-white text-black transition-colors duration-300 antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900;
+  }
+
+  /* Headings use the serif font */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .font-serif {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .dark body {
+    @apply bg-black text-white selection:bg-blue-900 selection:text-blue-100;
+  }
+
+  /* Thin elegant scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 999px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer utilities {
+
+  /* Minimalist borders */
+  .border-subtle {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .dark .border-subtle {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Clean background utility */
+  .bg-subtle {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  .dark .bg-subtle {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Subtle lift effect for cards (no heavy shadow) */
+  .card-lift {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08);
+  }
+
+  .dark .card-lift:hover {
+    box-shadow: 0 4px 20px -4px rgba(0, 153, 255, 0.15);
+  }
+
+  /* Pulse glow for status indicators */
+  .status-pulse {
+    animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+
+    80% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  /* Fade-in animation for cards */
+  .fade-in-up {
+    animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
