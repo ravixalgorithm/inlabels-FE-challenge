@@ -186,7 +186,7 @@
         <span class="text-black dark:text-white font-bold">TailwindCSS</span>
         <span class="mx-2 text-gray-300 dark:text-gray-700">|</span>
         <a
-          href="https://github.com/11ara/take-home-challenge"
+          href="https://github.com/ravixalgorithm/inlabels-FE-challenge"
           class="text-black dark:text-white hover:text-primary transition-colors underline decoration-subtle underline-offset-4"
         >
           View on GitHub ↗

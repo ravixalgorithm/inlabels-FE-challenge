@@ -5,7 +5,7 @@ fad62070c0e013d455f588c55226b016dcba3a8821486df4be90de30ccd7c7957
 A responsive, feature-rich Notes Web Application built with **Svelte 5**, **TailwindCSS v4**, and **TypeScript**. Designed for the Frontend Internship Take-Home Challenge.
 
 ## 🚀 Live Demo
-*(Link to deployed app here, e.g. Vercel/Netlify)*
+[Live Link:](https://inlabels-fe-challenge.vercel.app)
 
 **Deployment Instructions:**
 This app is Vite + Svelte. You can deploy it seamlessly to **Vercel**, **Netlify**, or **GitHub Pages**:
